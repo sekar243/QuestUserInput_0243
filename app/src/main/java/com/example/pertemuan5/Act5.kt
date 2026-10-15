@@ -51,14 +51,12 @@ fun FormDataDiri(modifier: Modifier){
             modifier = Modifier.width(250.dp),
             label = { Text(text = "Nama Lengkap") },
             onValueChange = {
-                textNama = it
-            }
+                textNama = it }
         )
 
         Row {
             gender.forEach { item ->
-                Row(
-                    modifier = Modifier.selectable(
+                Row(modifier = Modifier.selectable(
                     selected = textJK == item,
                     onClick = { textJK = item }
                 ), verticalAlignment = Alignment.CenterVertically) {
@@ -76,10 +74,9 @@ fun FormDataDiri(modifier: Modifier){
             singleLine = true,
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
-            label = { Text("Alamat") },
+            label = { Text( "Alamat") },
             onValueChange = {
-                textAlamat = it
-            }
+                textAlamat = it }
         )
         HorizontalDivider(
             modifier = Modifier.padding(
@@ -97,9 +94,9 @@ fun FormDataDiri(modifier: Modifier){
             //the button is enabled when the user makes a selection
             enabled = textAlamat.isNotEmpty(),
             onClick = {
-                nama = textNama
-                jenis = textJK
-                alamat = textAlamat
+                nama=textNama
+                jenis=textJK
+                alamat=textAlamat
             }
         ) {
             Text(stringResource(R.string.submit))
@@ -108,15 +105,21 @@ fun FormDataDiri(modifier: Modifier){
             modifier = Modifier.padding(
                 bottom =
                     dimensionResource(R.dimen.padding_medium),
-                top = dimensionResource(
-                    id = R.dimen.padding_medium
-                )
+                    top = dimensionResource(
+                        id = R.dimen.padding_medium
+                    )
             ),
             thickness = dimensionResource(R.dimen.divider_tipis),
             color = Color.DarkGray
         )
-
-
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
+            modifier = Modifier
+                .height(100.dp)
+                .width(300.dp)
+        ) {
+        }
     }
 }
 
